@@ -1,2 +1,11 @@
 <template name="tasks">
+    <div class="row">
+        <div class="col m4 s12">
+
+            {{#each tasks}}
+                {{> task}}
+            {{/each}}
+
+        </div>
+    </div>
 </template>
