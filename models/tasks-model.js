@@ -12,5 +12,10 @@ if (Meteor.isClient) {
 
 Meteor.methods({
     'Tasks.add': 		task => Tasks.insert(_.extend(task,
-        { created: moment().format() }))
+        { created: moment().format() })),
+
+    'Tasks.remove': 	_id => Tasks.remove({ _id }),
+
+    'Tasks.setChecked': (_id, checked) =>
+        Tasks.update( _id, { $set: { checked } })
 });
